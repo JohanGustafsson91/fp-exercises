@@ -2,14 +2,14 @@
   "name": "fp-exercises",
   "version": "1.0.0",
   "description": "Answers to https://gist.github.com/oskarkv/3168ea3f8d7530ccd94c97c19aafe266",
-  "main": "index.js",
+  "main": "recursion.js",
   "scripts": {
     "test": "jest src/"
   },
   "keywords": [
     "fp"
   ],
-  "author": "Johan",
+  "author": "Johan Gustafsson <johan.gustafsson91@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "jest": "^27.3.1"
