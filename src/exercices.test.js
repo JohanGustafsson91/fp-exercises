@@ -7,6 +7,7 @@ const { clist } = require("./clist");
 const { add, sub, negate } = require("./add-sub");
 const { compose } = require("./compose");
 const { zip } = require("./zip");
+const { zipmap } = require("./zipmap");
 
 test(calculateSumOfNumbersInList.name, () => {
   const input = [1, [2], [[3]], 4, [[[[[[5]]]]]]];
@@ -63,4 +64,8 @@ test(zip.name, () => {
     [1, 4, 7],
     [2, 5, 8],
   ]);
+});
+
+test(zipmap.name, () => {
+  expect(zipmap([1, 2, 3], [4, 5, 6])).toEqual({ 1: 4, 2: 5, 3: 6 });
 });
