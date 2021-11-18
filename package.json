@@ -4,7 +4,8 @@
   "description": "Answers to https://gist.github.com/oskarkv/3168ea3f8d7530ccd94c97c19aafe266",
   "main": "recursion.js",
   "scripts": {
-    "test": "jest src/"
+    "test": "jest src/",
+    "test:watch": "jest src/ --watchAll"
   },
   "keywords": [
     "fp"

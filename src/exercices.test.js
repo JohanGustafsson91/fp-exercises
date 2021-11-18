@@ -6,6 +6,7 @@ const {
 const { clist } = require("./clist");
 const { add, sub, negate } = require("./add-sub");
 const { compose } = require("./compose");
+const { zip } = require("./zip");
 
 test(calculateSumOfNumbersInList.name, () => {
   const input = [1, [2], [[3]], 4, [[[[[[5]]]]]]];
@@ -44,4 +45,22 @@ test(compose.name, () => {
   const double = (val) => val * 2;
   expect(compose(negate, double, add)(1, 2, 3)).toEqual(-12);
   expect(compose(clist, double, sub)(1, 2, 3)).toEqual([-8]);
+});
+
+test(zip.name, () => {
+  expect(zip([1, 2, 3], [4, 5, 6])).toEqual([
+    [1, 4],
+    [2, 5],
+    [3, 6],
+  ]);
+  expect(zip([1, 2, 3], [4, 5, 6], [7, 8, 9])).toEqual([
+    [1, 4, 7],
+    [2, 5, 8],
+    [3, 6, 9],
+  ]);
+  expect(zip([1, 2, 3], [4, 5], [7])).toEqual([[1, 4, 7]]);
+  expect(zip([1, 2, 3], [4, 5], [7, 8])).toEqual([
+    [1, 4, 7],
+    [2, 5, 8],
+  ]);
 });
