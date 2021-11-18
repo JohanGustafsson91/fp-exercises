@@ -1,11 +1,12 @@
 {
   "name": "fp-exercises",
+  "type": "module",
   "version": "1.0.0",
   "description": "Answers to https://gist.github.com/oskarkv/3168ea3f8d7530ccd94c97c19aafe266",
   "main": "recursion.js",
   "scripts": {
-    "test": "jest src/",
-    "test:watch": "jest src/ --watchAll"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js src/",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js src/ --watchAll"
   },
   "keywords": [
     "fp"

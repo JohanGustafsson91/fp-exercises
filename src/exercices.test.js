@@ -1,16 +1,20 @@
-const {
+import {
   calculateSumOfNumbersInList,
   calculateDepthOfList,
   findLargestValueInList,
-} = require("./recursion");
-const { clist } = require("./clist");
-const { add, sub, negate } = require("./add-sub");
-const { compose } = require("./compose");
-const { zip } = require("./zip");
-const { zipmap } = require("./zipmap");
-const { zipwith } = require("./zipwith");
-const { car, cons, cdr } = require("./car-cdr");
-const { partial } = require("./partial");
+  clist,
+  add,
+  sub,
+  negate,
+  compose,
+  zip,
+  zipmap,
+  zipwith,
+  car,
+  cons,
+  cdr,
+  partial,
+} from ".";
 
 test(calculateSumOfNumbersInList.name, () => {
   const input = [1, [2], [[3]], 4, [[[[[[5]]]]]]];

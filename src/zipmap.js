@@ -1,4 +1,4 @@
-function zipmap(...lists) {
+export function zipmap(...lists) {
   const [firstList, secondList] = lists;
 
   return firstList.reduce(
@@ -6,7 +6,3 @@ function zipmap(...lists) {
     {}
   );
 }
-
-module.exports = {
-  zipmap,
-};
