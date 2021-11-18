@@ -9,6 +9,7 @@ const { compose } = require("./compose");
 const { zip } = require("./zip");
 const { zipmap } = require("./zipmap");
 const { zipwith } = require("./zipwith");
+const { car, cons, cdr } = require("./car-cdr");
 
 test(calculateSumOfNumbersInList.name, () => {
   const input = [1, [2], [[3]], 4, [[[[[[5]]]]]]];
@@ -74,4 +75,12 @@ test(zipmap.name, () => {
 test(zipwith.name, () => {
   expect(zipwith(add, [1, 2, 3], [4, 5, 6])).toEqual([5, 7, 9]);
   expect(zipwith(add, [1, 2, 3], [4, 5, 6], [1, 1, 1])).toEqual([6, 8, 10]);
+});
+
+test(car.name, () => {
+  expect(car(cons(3, 4))).toEqual(3);
+});
+
+test(cdr.name, () => {
+  expect(cdr(cons(3, 4))).toEqual(4);
 });

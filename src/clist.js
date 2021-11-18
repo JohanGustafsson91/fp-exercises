@@ -1,5 +1,5 @@
 function clist(...args) {
-  return args;
+  return [...args];
 }
 
 module.exports = {
