@@ -10,6 +10,7 @@ const { zip } = require("./zip");
 const { zipmap } = require("./zipmap");
 const { zipwith } = require("./zipwith");
 const { car, cons, cdr } = require("./car-cdr");
+const { partial } = require("./partial");
 
 test(calculateSumOfNumbersInList.name, () => {
   const input = [1, [2], [[3]], 4, [[[[[[5]]]]]]];
@@ -83,4 +84,10 @@ test(car.name, () => {
 
 test(cdr.name, () => {
   expect(cdr(cons(3, 4))).toEqual(4);
+});
+
+test(partial.name, () => {
+  expect(partial(add, 1, 2)(3, 4)).toEqual(10);
+  expect(partial(clist, 1, 2)(3, 4)).toEqual([1, 2, 3, 4]);
+  expect(partial(sub, 10)(1, 2)).toEqual(7);
 });
