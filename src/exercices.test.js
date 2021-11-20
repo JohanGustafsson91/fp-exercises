@@ -14,6 +14,7 @@ import {
   cons,
   cdr,
   partial,
+  transpose,
 } from ".";
 
 test(calculateSumOfNumbersInList.name, () => {
@@ -94,4 +95,17 @@ test(partial.name, () => {
   expect(partial(add, 1, 2)(3, 4)).toEqual(10);
   expect(partial(clist, 1, 2)(3, 4)).toEqual([1, 2, 3, 4]);
   expect(partial(sub, 10)(1, 2)).toEqual(7);
+});
+
+test(transpose.name, () => {
+  expect(
+    transpose([
+      [1, 2, 3],
+      [4, 5, 6],
+    ])
+  ).toEqual([
+    [1, 4],
+    [2, 5],
+    [3, 6],
+  ]);
 });

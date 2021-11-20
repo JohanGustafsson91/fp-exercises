@@ -7,3 +7,4 @@ export * from "./zipmap";
 export * from "./zipwith";
 export * from "./car-cdr";
 export * from "./partial";
+export * from "./transpose";
