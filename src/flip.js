@@ -1,4 +1,4 @@
-import { compose, partial } from ".";
+import { compose } from ".";
 
 export const flip = (fn) => {
   return function takeArgs(...args) {
