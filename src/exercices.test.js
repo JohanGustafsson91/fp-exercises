@@ -22,6 +22,7 @@ import {
   drop,
   flatten,
   interleave,
+  everyPred,
 } from ".";
 
 test(calculateSumOfNumbersInList.name, () => {
@@ -154,4 +155,11 @@ test(interleave.name, () => {
     30,
     "c",
   ]);
+});
+
+test(everyPred.name, () => {
+  const positive = (val) => val > 0;
+  const even = (val) => val % 2 === 0;
+  expect(everyPred(positive, even)(8)).toEqual(true);
+  expect(everyPred(positive, even)(7)).toEqual(false);
 });
