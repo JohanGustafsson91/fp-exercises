@@ -1,8 +1,11 @@
-export function zipmap(...lists) {
+export const zipmap = (...lists) => {
   const [firstList, secondList] = lists;
 
   return firstList.reduce(
-    (acc, curr, i) => ({ ...acc, [curr]: secondList[i] }),
+    (previousMap, currentItem, index) => ({
+      ...previousMap,
+      [currentItem]: secondList[index],
+    }),
     {}
   );
-}
+};

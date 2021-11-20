@@ -1,12 +1,18 @@
-export function add(...numbers) {
-  return numbers.reduce((acc, curr) => acc + curr, 0);
-}
+import { compose } from "./compose";
 
-export function sub(...[first, ...rest]) {
+export const add = (...numbers) => {
+  return numbers.reduce((acc, curr) => acc + curr, 0);
+};
+
+export const sub = (...[first, ...rest]) => {
   return rest.length
     ? rest.reduce((acc, curr) => acc - curr, first)
     : first * -1;
-}
+};
 
-// TODO guard with unary()
-export const negate = sub;
+const unary = (...args) => {
+  const [firstArg] = args;
+  return firstArg;
+};
+
+export const negate = compose(sub, unary);

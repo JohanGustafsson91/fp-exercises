@@ -5,14 +5,3 @@ export const compose = (...functions) => {
     }, args);
   };
 };
-
-/**
- * With arrow functions
- */
-// export const compose =
-//   (...functions) =>
-//   (...args) =>
-//     functions.reduceRight(
-//       (acc, fn, i) => (i + 1 === functions.length ? fn(...acc) : fn(acc)),
-//       args
-//     );

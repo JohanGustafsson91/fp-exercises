@@ -1,3 +1,3 @@
-export function clist(...args) {
+export const clist = (...args) => {
   return [...args];
-}
+};

@@ -1,5 +1,5 @@
-export function partial(fn, ...firstArgs) {
+export const partial = (fn, ...args) => {
   return function applyRestOfArgs(...restOfArgs) {
-    return fn(...firstArgs, ...restOfArgs);
+    return fn(...args, ...restOfArgs);
   };
-}
+};
