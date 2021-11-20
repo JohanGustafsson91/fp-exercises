@@ -1,9 +1,7 @@
-import { add } from "./add-sub";
-
-export function compose(...fns) {
-  return function callFns(...args) {
-    return fns
-      .reverse()
-      .reduce((acc, fn, i) => (i === 0 ? fn(...acc) : fn(acc)), args);
+export function compose(...functions) {
+  return function callAllFunctions(...args) {
+    return functions.reduceRight(function callFunction(acc, fn, i, values) {
+      return i + 1 === values.length ? fn(...acc) : fn(acc);
+    }, args);
   };
 }
