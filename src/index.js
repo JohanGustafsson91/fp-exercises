@@ -14,3 +14,4 @@ export * from "./drop";
 export * from "./flatten";
 export * from "./interleave";
 export * from "./every-pred";
+export * from "./frequencies";

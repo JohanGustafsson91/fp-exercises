@@ -23,6 +23,7 @@ import {
   flatten,
   interleave,
   everyPred,
+  frequencies,
 } from ".";
 
 test(calculateSumOfNumbersInList.name, () => {
@@ -143,7 +144,7 @@ test(flatten.name, () => {
 });
 
 test(interleave.name, () => {
-  // expect(interleave([1, 2, 3], [10, 20, 30])).toEqual([1, 10, 2, 20, 3, 30]);
+  expect(interleave([1, 2, 3], [10, 20, 30])).toEqual([1, 10, 2, 20, 3, 30]);
   expect(interleave([1, 2, 3], [10, 20, 30], "abc")).toEqual([
     1,
     10,
@@ -162,4 +163,9 @@ test(everyPred.name, () => {
   const even = (val) => val % 2 === 0;
   expect(everyPred(positive, even)(8)).toEqual(true);
   expect(everyPred(positive, even)(7)).toEqual(false);
+});
+
+test(frequencies.name, () => {
+  expect(frequencies("aabcbcac")).toEqual({ a: 3, c: 3, b: 2 });
+  expect(frequencies([1, 2, 2, 2])).toEqual({ 1: 1, 2: 3 });
 });

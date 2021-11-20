@@ -1,10 +1,7 @@
 import { compose, flatten, zip } from ".";
-import { collectArgs, spreadArgs } from "./utils";
+import { collectArgs, spreadArgs, valueToArray } from "./utils";
 
-const splitToArray = (list) =>
-  list.map((sequence) =>
-    Array.isArray(sequence) ? sequence : sequence.split("")
-  );
+const splitToArray = (list) => list.map(valueToArray);
 
 export const interleave = compose(
   flatten,

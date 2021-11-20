@@ -13,3 +13,6 @@ export const collectArgs = (fn) => {
     return fn(args);
   };
 };
+
+export const valueToArray = (value) =>
+  Array.isArray(value) ? value : value.split("");
