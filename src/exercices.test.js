@@ -15,6 +15,7 @@ import {
   cdr,
   partial,
   transpose,
+  flip,
 } from ".";
 
 test(calculateSumOfNumbersInList.name, () => {
@@ -108,4 +109,9 @@ test(transpose.name, () => {
     [2, 5],
     [3, 6],
   ]);
+});
+
+test(flip.name, () => {
+  expect(flip(clist)(1, 2, 3)).toEqual([2, 1, 3]);
+  expect(flip(sub)(10, 1)).toEqual(-9);
 });

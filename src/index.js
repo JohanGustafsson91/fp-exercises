@@ -8,3 +8,4 @@ export * from "./zipwith";
 export * from "./car-cdr";
 export * from "./partial";
 export * from "./transpose";
+export * from "./flip";
