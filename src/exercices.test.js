@@ -16,6 +16,7 @@ import {
   partial,
   transpose,
   flip,
+  flips,
 } from ".";
 
 test(calculateSumOfNumbersInList.name, () => {
@@ -114,4 +115,9 @@ test(transpose.name, () => {
 test(flip.name, () => {
   expect(flip(clist)(1, 2, 3)).toEqual([2, 1, 3]);
   expect(flip(sub)(10, 1)).toEqual(-9);
+});
+
+test(flips.name, () => {
+  expect(flips(clist)(1, 2, 3)).toEqual([3, 2, 1]);
+  expect(flips(sub)(1, 2, 3)).toEqual(0);
 });
