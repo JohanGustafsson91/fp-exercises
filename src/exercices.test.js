@@ -17,6 +17,10 @@ import {
   transpose,
   flip,
   flips,
+  take,
+  range,
+  drop,
+  flatten,
 } from ".";
 
 test(calculateSumOfNumbersInList.name, () => {
@@ -120,4 +124,18 @@ test(flip.name, () => {
 test(flips.name, () => {
   expect(flips(clist)(1, 2, 3)).toEqual([3, 2, 1]);
   expect(flips(sub)(1, 2, 3)).toEqual(0);
+});
+
+test(take.name, () => {
+  expect(take(3, range(10))).toEqual([0, 1, 2]);
+});
+
+test(drop.name, () => {
+  expect(drop(3, range(6))).toEqual([3, 4, 5]);
+});
+
+test(flatten.name, () => {
+  expect(flatten([1, [2, [3, 4], [5, 6], 7], 8, [9, 10]])).toEqual([
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+  ]);
 });

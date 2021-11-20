@@ -9,3 +9,6 @@ export * from "./car-cdr";
 export * from "./partial";
 export * from "./transpose";
 export * from "./flip";
+export * from "./take";
+export * from "./drop";
+export * from "./flatten";
