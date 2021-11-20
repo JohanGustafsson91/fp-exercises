@@ -1,4 +1,5 @@
 import { compose } from ".";
+import { spreadArgs } from "./utils";
 
 export const flip = (fn) => {
   return function takeArgs(...args) {
@@ -12,12 +13,6 @@ export const flip = (fn) => {
 //     return fn(...args.reverse());
 //   };
 // };
-
-const spreadArgs = (fn) => {
-  return function spreadFn(argsArr) {
-    return fn(...argsArr);
-  };
-};
 
 const reverseArgs = (...argsArr) => argsArr.reverse();
 export const flips = (fn) => compose(spreadArgs(fn), reverseArgs);

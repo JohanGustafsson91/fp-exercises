@@ -21,6 +21,7 @@ import {
   range,
   drop,
   flatten,
+  interleave,
 } from ".";
 
 test(calculateSumOfNumbersInList.name, () => {
@@ -137,5 +138,20 @@ test(drop.name, () => {
 test(flatten.name, () => {
   expect(flatten([1, [2, [3, 4], [5, 6], 7], 8, [9, 10]])).toEqual([
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+  ]);
+});
+
+test(interleave.name, () => {
+  // expect(interleave([1, 2, 3], [10, 20, 30])).toEqual([1, 10, 2, 20, 3, 30]);
+  expect(interleave([1, 2, 3], [10, 20, 30], "abc")).toEqual([
+    1,
+    10,
+    "a",
+    2,
+    20,
+    "b",
+    3,
+    30,
+    "c",
   ]);
 });

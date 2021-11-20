@@ -12,3 +12,4 @@ export * from "./flip";
 export * from "./take";
 export * from "./drop";
 export * from "./flatten";
+export * from "./interleave";
